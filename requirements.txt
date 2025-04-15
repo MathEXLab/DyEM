@@ -1,0 +1,22 @@
+# --------- Data and ML --------- #
+omegaconf
+py-pde
+pyFFTW
+torch
+lightning
+torchmetrics
+vit_pytorch
+optuna
+xarray
+matplotlib
+tqbm
+
+# --------- di --------- #
+scipy
+numpy
+statsmodels
+
+# --------- parallel --------- #
+mpi4py  
+
+
