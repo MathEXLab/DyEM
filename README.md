@@ -1,4 +1,4 @@
-# PyDIEM: Dynamical Indices Error Metrics in Python
+# DyEM: Dynamical Error Metrics 
 
 Python code and Jupyter notebooks supporting the manuscript "Dynamical Error Metrics in Machine Learning Forecasts," which introduces the use of instantaneous dynamical indices for evaluating machine learning forecasts, introducing error metrics mirroring the one commonly used in the field.
 
