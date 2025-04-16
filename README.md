@@ -17,10 +17,10 @@ In this repository, we provide the code for reproducing the results in our paper
 ### 1. Clone the repository
 
 ```
-git clone https://github.com/yourusername/project-name.git
+git clone https://github.com/MathEXLab/DyEM.git
 ```
 ### 2. Install dependencies
-We recommend to use a virtual environment, such as `venv` or `conda`. To install all dependencies, use:
+We recommend to use a virtual environment, such as `venv` or `conda` to manage the packages. To install all dependencies, use:
 
 ```
 pip install -r requirements.txt
@@ -44,7 +44,7 @@ Run experiments
 python run.py --config config/config_name.yaml --device[opt] 0 --seed[opt] 42
 ```
 
-Hyperparameter optimization:
+Run hyperparameter optimization:
 
 ```
 python sweep.py --config config/config_name.yaml --sweep_config config/config_name.yaml
@@ -55,4 +55,6 @@ Stadard and dynamical metrics are available in
 ## 📝 Citation
 If you find this code or paper helpful to your work, please cite:
 ```bibtex
+
+
 ```
