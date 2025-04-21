@@ -32,7 +32,38 @@ conda install --file requirements.txt
 
 ## 📊 Data
 ### Generate from scripts
-Lorenz, KS, KF
+#### Lorenz dataset
+The Lorenz 63 dataset can be generated with
+```
+python /data/lorenz/data_generation.py --nt 150000
+```
+After that, preprocess the data with
+```
+python /data/lorenz/data_process.py
+```
+
+#### Kuramoto-Sivashinsky (KS) dataset
+The code for generating KS dataset is adopted from the github repository [pyks](https://github.com/jswhit/pyks).
+In this repo, generate data with
+```
+python /data/ks/ks_gen.py
+```
+After that, preprocess the data with
+```
+python /data/ks/data_process.py
+```
+
+
+#### Kolmogorov Flow (KF) dataset
+We use the code provided by [KolSol](https://github.com/MagriLab/KolSol) to generate KF dataset, with the parameter
+```
+--resolution 64 --re 14.4 --time-simulation 10000 --nf 2
+```
+
+After the data is generated, calculate vorticity and downsample data with:
+```
+python /data/kf/preprocess.py --truncate_before 10000
+```
 
 ### Download Weatehr data
 ERA5:
@@ -50,11 +81,16 @@ Run hyperparameter optimization:
 python sweep.py --config config/config_name.yaml --sweep_config config/config_name.yaml
 ```
 ## 📈 Evaluation
-Stadard and dynamical metrics are available in 
+Stadard and dynamical metrics are available in `src/utils/dy_metrics.py`.
 
 ## 📝 Citation
 If you find this code or paper helpful to your work, please cite:
 ```bibtex
-
+@article{fang2025dynamical,
+  title={Dynamical errors in machine learning forecasts},
+  author={Fang, Zhou and Mengaldo, Gianmarco},
+  journal={arXiv preprint arXiv:2504.11074},
+  year={2025}
+}
 
 ```
