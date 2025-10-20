@@ -65,10 +65,6 @@ After the data is generated, calculate vorticity and downsample data with:
 python /data/kf/preprocess.py --truncate_before 10000
 ```
 
-### Download Weatehr data
-ERA5:
-Weatherbench2
-
 ## 🏋️‍♀️ Training
 Run experiments
 ```
@@ -81,7 +77,14 @@ Run hyperparameter optimization:
 python sweep.py --config config/config_name.yaml --sweep_config config/config_name.yaml
 ```
 ## 📈 Evaluation
-Stadard and dynamical metrics are available in `src/utils/dy_metrics.py`.
+The dynamical indices (DI) of forecasts can be calculated with `append_indices_serial.py` by:
+```
+python append_indice_parallel.py \
+  --data data/lorenz/train/data_original.npy \  # path to data considered as base attractor
+  --new /home/dynamical_embedding/logs/regression_lorenz_CNN1d_init3_pred1_best/version_0/checkpoints/predictions.npy # path to new data to compute DI against base attractor, e.g. ML forecast
+```
+
+After obtaining the DI, dynamical metrics are available in `src/utils/dy_metrics.py`.
 
 ## 📝 Citation
 If you find this code or paper helpful to your work, please cite:
